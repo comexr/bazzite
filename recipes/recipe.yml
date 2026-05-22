@@ -6,7 +6,7 @@ name: bazzite
 description: Bazzite image with lwl-drivers included.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-dx
+base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 
 # module configuration, executed in order
@@ -20,6 +20,10 @@ modules:
         - https://comexr.github.io/comexr.asc
     install:
       packages:
-        - lwl-drivers
+        - lwl-drivers'
+
+  - type: script
+    snippets:
+      - "curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin CHANNEL=beta sh"
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
