@@ -20,7 +20,7 @@ modules:
         - https://comexr.github.io/comexr.asc
     install:
       packages:
-        - lwl-drivers'
+        - lwl-drivers
 
   - type: script
     snippets:
